@@ -5,7 +5,7 @@
     'accent' => null,   // 'gold' tints the icon chip
 ])
 
-<div class="cap-card cap-card--feature" data-animate="fade-up">
+<div {{ $attributes->merge(['class' => 'cap-card cap-card--feature']) }} data-animate="fade-up">
     @if ($icon)
         <span @class(['cap-card__icon', 'cap-card__icon--gold' => $accent === 'gold'])>
             <x-icon :name="$icon" :size="24" />

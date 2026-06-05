@@ -8,8 +8,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{-- SEO meta, Open Graph, JSON-LD are added in Phase 6 --}}
-    <title>@yield('title', 'CapStation')</title>
+    {{-- Full Open Graph, canonical, JSON-LD & hreflang are added in Phase 6 --}}
+    <title>@yield('title', __('site.meta.title'))</title>
+    <meta name="description" content="@yield('meta_description', __('site.meta.description'))">
 
     @stack('head')
 
