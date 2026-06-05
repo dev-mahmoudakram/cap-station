@@ -41,6 +41,53 @@
     }
 }
 
+.cap-card__icon--gold {
+    background: rgba($brand-secondary, 0.14);
+    color: var(--brand-secondary-dark);
+}
+
+// --- Stat card -------------------------------------------------
+.stat-card {
+    text-align: center;
+    padding: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+
+    &__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.6rem;
+        height: 2.6rem;
+        border-radius: 0.8rem;
+        background: rgba($brand-primary, 0.08);
+        color: var(--brand-primary);
+        margin-bottom: 0.6rem;
+    }
+
+    &__num {
+        font-weight: 800;
+        font-size: clamp(2rem, 1.5rem + 2.4vw, 3rem);
+        line-height: 1;
+        color: var(--brand-primary-deep);
+        letter-spacing: -0.01em;
+    }
+
+    &__label {
+        margin-top: 0.4rem;
+        font-weight: 600;
+        color: rgba($brand-black, 0.62);
+    }
+
+    // On dark surfaces
+    .section--dark & {
+        .stat-card__num { color: #fff; }
+        .stat-card__label { color: rgba(#fff, 0.78); }
+        .stat-card__icon {
+            background: rgba(#fff, 0.1);
+            color: var(--brand-secondary);
+        }
+    }
+}
+
 @include reduced-motion {
     .cap-card:hover {
         transform: none;

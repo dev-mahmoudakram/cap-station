@@ -19,6 +19,10 @@ export default defineConfig({
         },
     },
     server: {
+        // Bind to IPv4 so the dev-server URL written to public/hot is reachable
+        // (Vite 8 otherwise resolves localhost to IPv6 [::1] on Windows, which
+        // makes assets fail to load when the app is opened on 127.0.0.1).
+        host: '127.0.0.1',
         watch: {
             ignored: ['**/storage/framework/views/**'],
         },

@@ -1,0 +1,45 @@
+// =============================================================
+// CapStation — FAQ accordion (brand-styled Bootstrap accordion)
+// =============================================================
+
+.cap-faq {
+    --bs-accordion-border-color: var(--brand-border);
+    --bs-accordion-border-radius: #{$border-radius-lg};
+    --bs-accordion-inner-border-radius: #{$border-radius-lg};
+    --bs-accordion-active-bg: rgba(0, 112, 56, 0.04);
+    --bs-accordion-active-color: var(--brand-primary-deep);
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(0, 112, 56, 0.18);
+    --bs-accordion-btn-color: var(--brand-primary-deep);
+    --bs-accordion-color: rgba(5, 8, 7, 0.72);
+
+    max-width: 52rem;
+    margin-inline: auto;
+
+    .cap-faq__item {
+        border: 1px solid var(--brand-border);
+        border-radius: $border-radius-lg !important;
+        overflow: hidden;
+
+        & + .cap-faq__item {
+            margin-top: 0.85rem;
+        }
+    }
+
+    .accordion-button {
+        font-weight: 700;
+        font-size: 1.05rem;
+
+        &:not(.collapsed) {
+            box-shadow: none;
+        }
+
+        // Recolour the default chevron to brand green
+        &::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23005F2E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M3 6l5 5 5-5'/%3e%3c/svg%3e");
+        }
+    }
+
+    .accordion-body {
+        line-height: 1.85;
+    }
+}

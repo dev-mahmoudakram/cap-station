@@ -40,4 +40,20 @@
     max-width: 46rem;
     margin-inline: auto;
     text-align: center;
+
+    // Start-aligned variant (split layouts)
+    &--start {
+        margin-inline: 0;
+        max-width: 34rem;
+        text-align: start;
+    }
+
+    // Light variant for dark sections
+    &.is-light {
+        .section-title,
+        h2 { color: #fff; }
+
+        .lead { color: rgba(#fff, 0.8); }
+        .text-eyebrow { color: var(--brand-secondary); }
+    }
 }

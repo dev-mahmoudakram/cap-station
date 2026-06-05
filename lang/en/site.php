@@ -13,6 +13,14 @@ return [
     'brand'   => 'CapStation',
     'tagline' => 'Your smart station for more opportunities',
 
+    // Hero chip labels (full hero copy is added in Phase 4)
+    'hero' => [
+        'chip_route_label'  => 'Nearest trip',
+        'chip_route_value'  => '3 km away',
+        'chip_wallet_label' => "Today's earnings",
+        'chip_wallet_value' => 'SAR 480',
+    ],
+
     'nav' => [
         'home'         => 'Home',
         'how_it_works' => 'How it works',

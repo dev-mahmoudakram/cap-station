@@ -1,0 +1,60 @@
+// =============================================================
+// CapStation — CTA section (premium gradient panel)
+// =============================================================
+
+.cta-section__panel {
+    position: relative;
+    overflow: hidden;
+    border-radius: $border-radius-xl;
+    padding: clamp(2.5rem, 2rem + 4vw, 5rem) clamp(1.5rem, 1rem + 3vw, 4rem);
+    background: var(--gradient-brand);
+    color: #fff;
+    box-shadow: 0 30px 70px rgba($brand-primary-deep, 0.35);
+    text-align: center;
+
+    // Gold hairline frame
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        border: 1px solid rgba($brand-secondary, 0.4);
+        pointer-events: none;
+    }
+}
+
+.cta-section__road {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: 0;
+    width: 100%;
+    height: 120px;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.cta-section__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 44rem;
+    margin-inline: auto;
+}
+
+.cta-section__title {
+    color: #fff;
+    font-size: clamp(1.6rem, 1.2rem + 2vw, 2.5rem);
+    margin-bottom: 0.75rem;
+}
+
+.cta-section__text {
+    color: rgba(#fff, 0.82);
+    font-size: 1.1rem;
+    margin-bottom: 1.75rem;
+}
+
+.cta-section__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
