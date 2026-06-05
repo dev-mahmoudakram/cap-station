@@ -1,6 +1,27 @@
 // =============================================================
 // CapStation — RTL / LTR helpers
-// Prefer logical properties elsewhere; this file holds
-// direction-specific overrides that can't be expressed logically.
-// (Expanded in Phase 2.)
+// We use logical properties (margin-inline, inset-inline, etc.)
+// almost everywhere. This file holds the few direction-specific
+// overrides that can't be expressed logically.
 // =============================================================
+
+// Flip horizontally mirrored decorative elements (e.g. directional
+// arrows, road curves) when the document is RTL.
+[dir='rtl'] .flip-rtl {
+    transform: scaleX(-1);
+}
+
+// Bootstrap's dropdown carets / chevrons stay visually consistent;
+// keep list bullets and numerals on the start side.
+[dir='rtl'] {
+    ol, ul {
+        padding-inline-start: 1.25rem;
+        padding-inline-end: 0;
+    }
+}
+
+// Tabular numerals read better for stats/counters in both scripts.
+.tnum {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
+}

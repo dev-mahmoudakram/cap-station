@@ -1,30 +1,36 @@
 @extends('layouts.app')
 
-@section('title', 'CapStation')
+@section('title', __('site.brand'))
 
 @section('content')
-    {{-- Phase 1 foundation check. Replaced by the full landing page in Phase 4. --}}
-    <section class="foundation-check container d-flex flex-column align-items-center justify-content-center gap-3 py-5">
-        <img src="{{ asset('images/capstation-logo.png') }}"
-             alt="CapStation"
-             width="180" height="180"
-             class="foundation-check__logo">
+    {{-- Phase 2 placeholder: shows the layout shell + design system.
+         Real landing sections are composed in Phase 4. --}}
+    <section class="section text-center">
+        <div class="container">
+            <img src="{{ asset('images/capstation-logo.png') }}"
+                 alt="{{ __('site.brand') }}" width="160" height="160"
+                 class="mb-3" style="width:140px;height:auto;">
 
-        <span class="foundation-check__badge">
-            {{ app()->getLocale() === 'ar' ? 'المرحلة ١ — الأساس جاهز' : 'Phase 1 — Foundation ready' }}
-        </span>
+            <span class="text-eyebrow d-block mb-2">{{ __('site.tagline') }}</span>
 
-        <h1 class="mt-2">CapStation</h1>
+            <h1 class="section-title mb-3">{{ __('site.brand') }}</h1>
 
-        <p class="text-secondary mb-0">
-            {{ app()->getLocale() === 'ar'
-                ? 'منصة التشغيل الذكية للكباتن — قيد الإنشاء.'
-                : 'The smart operations platform for captains — under construction.' }}
-        </p>
+            <p class="lead mx-auto mb-4" style="max-width:42rem;">
+                {{ __('site.footer.description') }}
+            </p>
 
-        <div class="d-flex gap-2 mt-2">
-            <a href="{{ url('/ar') }}" class="btn btn-sm btn-outline-secondary">العربية</a>
-            <a href="{{ url('/en') }}" class="btn btn-sm btn-outline-secondary">English</a>
+            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                <a href="#join" class="btn btn-primary btn-lg">{{ __('site.nav.cta') }}</a>
+                <a href="#how-it-works" class="btn btn-gold btn-lg">{{ __('site.nav.how_it_works') }}</a>
+            </div>
+        </div>
+    </section>
+
+    {{-- Premium dark band to preview the section variant + footer transition --}}
+    <section class="section section--dark text-center" id="join">
+        <div class="container">
+            <h2 class="mb-3">{{ __('site.tagline') }}</h2>
+            <a href="#" class="btn btn-premium btn-lg">{{ __('site.nav.cta') }}</a>
         </div>
     </section>
 @endsection

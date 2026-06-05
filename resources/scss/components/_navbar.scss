@@ -1,1 +1,84 @@
-// CapStation — Navbar (expanded in Phase 2)
+// =============================================================
+// CapStation — Navbar (glass, sticky, RTL-aware)
+// =============================================================
+
+.cap-navbar {
+    background: rgba($brand-white, 0.82);
+    -webkit-backdrop-filter: blur(14px) saturate(150%);
+    backdrop-filter: blur(14px) saturate(150%);
+    border-bottom: 1px solid var(--brand-border);
+    transition: box-shadow 0.25s ease, background-color 0.25s ease;
+
+    // Toggled by JS once the page is scrolled (Phase 5)
+    &.is-scrolled {
+        background: rgba($brand-white, 0.94);
+        box-shadow: 0 8px 28px rgba($brand-black, 0.07);
+    }
+
+    &__logo {
+        height: 44px;
+        width: auto;
+    }
+
+    .nav-link {
+        font-weight: 600;
+        color: rgba($brand-black, 0.72);
+        border-radius: 0.5rem;
+        position: relative;
+
+        &:hover,
+        &:focus-visible {
+            color: var(--brand-primary);
+        }
+
+        &.active {
+            color: var(--brand-primary-deep);
+        }
+    }
+
+    // Language switcher pill
+    &__lang {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.45rem 0.85rem;
+        border-radius: 50rem;
+        font-weight: 600;
+        font-size: 0.92rem;
+        color: var(--brand-primary-deep);
+        border: 1px solid var(--brand-border);
+        background: rgba($brand-primary, 0.04);
+
+        &:hover,
+        &:focus-visible {
+            color: var(--brand-primary);
+            border-color: rgba($brand-primary, 0.4);
+            background: rgba($brand-primary, 0.08);
+        }
+    }
+
+    .navbar-toggler {
+        border: 0;
+        padding: 0.25rem 0.4rem;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+// --- RTL: open the offcanvas from the start (left) side --------
+// Bootstrap's .offcanvas-end is physical (right); flip it for RTL.
+[dir='rtl'] .cap-navbar__panel.offcanvas-end {
+    inset-inline-end: auto;
+    right: auto;
+    left: 0;
+    border-inline-start: 0;
+    border-inline-end: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
+    transform: translateX(-100%);
+}
+
+[dir='rtl'] .cap-navbar__panel.offcanvas-end.show,
+[dir='rtl'] .cap-navbar__panel.offcanvas-end.showing {
+    transform: none;
+}

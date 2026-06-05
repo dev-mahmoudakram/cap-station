@@ -1,6 +1,8 @@
 // =============================================================
 // CapStation — Brand tokens & Bootstrap overrides
 // Palette source: docs/color-palette.md (extracted from logo)
+// NOTE: Bootstrap overrides must precede the Bootstrap import
+//       in app.scss so the framework consumes them.
 // =============================================================
 
 // --- Brand palette (SCSS) ---------------------------------
@@ -17,39 +19,65 @@ $brand-cream:          #FFF8E6; // warm sections
 $brand-muted:          #6B7280; // muted text
 $brand-border:         rgba($brand-primary, 0.14);
 
-// --- Typography ------------------------------------------
+// --- Typography families ----------------------------------
 $font-family-arabic: 'Tajawal', 'Segoe UI', system-ui, sans-serif;
 $font-family-latin:  'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-// --- Bootstrap overrides (must precede Bootstrap import) ---
+// =============================================================
+//  Bootstrap variable overrides
+// =============================================================
+
+// Theme colors
 $primary:   $brand-primary;
-$secondary: $brand-secondary;
+$secondary: $brand-muted;
+$success:   $brand-primary-light;
 $dark:      $brand-primary-deep;
 $light:     $brand-cream;
+
+// Body
 $body-color: $brand-black;
 $body-bg:    $brand-white;
 
+// Type
 $font-family-sans-serif: $font-family-arabic;
-$headings-color: $brand-primary-deep;
-$headings-font-weight: 800;
+$headings-color:         $brand-primary-deep;
+$headings-font-weight:   800;
+$font-weight-medium:     500;
+$font-weight-semibold:   600;
+$lead-font-weight:       400;
 
+// Links
+$link-color:           $brand-primary;
+$link-hover-color:     $brand-primary-dark;
+$link-decoration:      none;
+$link-hover-decoration: none;
+
+// Radii
 $border-radius:    0.75rem;
 $border-radius-sm: 0.5rem;
 $border-radius-lg: 1.25rem;
 $border-radius-xl: 1.75rem;
+$border-radius-pill: 50rem;
 
+// Buttons
+$btn-font-weight:     700;
+$btn-padding-y:       0.7rem;
+$btn-padding-x:       1.5rem;
+$btn-border-radius:   $border-radius-pill;
+$btn-border-radius-sm: $border-radius-pill;
+$btn-border-radius-lg: $border-radius-pill;
+
+// Navbar
+$navbar-padding-y:           1rem;
+$navbar-nav-link-padding-x:  1rem;
+$navbar-light-color:         rgba($brand-black, 0.7);
+$navbar-light-hover-color:   $brand-primary;
+$navbar-light-active-color:  $brand-primary;
+
+// Misc
 $enable-negative-margins: true;
-$enable-smooth-scroll: true;
-
-// Theme color map additions for utility classes
-$brand-theme-colors: (
-    'brand':       $brand-primary,
-    'brand-dark':  $brand-primary-dark,
-    'brand-deep':  $brand-primary-deep,
-    'brand-light': $brand-primary-light,
-    'gold':        $brand-secondary,
-    'cream':       $brand-cream,
-);
+$enable-smooth-scroll:    true;
+$spacer: 1rem;
 
 // --- Mirror tokens as CSS custom properties ---------------
 :root {
@@ -65,4 +93,8 @@ $brand-theme-colors: (
     --brand-cream:          #{$brand-cream};
     --brand-muted:          #{$brand-muted};
     --brand-border:         #{$brand-border};
+
+    // Signature gradients reused across CTAs / premium sections
+    --gradient-brand: linear-gradient(135deg, #{$brand-primary} 0%, #{$brand-primary-deep} 100%);
+    --gradient-gold:  linear-gradient(135deg, #{$brand-secondary} 0%, #{$brand-secondary-dark} 100%);
 }

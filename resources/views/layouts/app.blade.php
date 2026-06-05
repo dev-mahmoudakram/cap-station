@@ -18,12 +18,12 @@
 <body>
     <a class="skip-link" href="#main">{{ $locale === 'ar' ? 'تجاوز إلى المحتوى' : 'Skip to content' }}</a>
 
-    {{-- Navbar component is added in Phase 2 --}}
+    <x-navbar />
 
     <main id="main">
         @yield('content')
     </main>
 
-    {{-- Footer component is added in Phase 2 --}}
+    <x-footer />
 </body>
 </html>

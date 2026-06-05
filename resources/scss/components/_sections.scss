@@ -1,1 +1,43 @@
-// CapStation — Section scaffolding (expanded in Phase 2/4)
+// =============================================================
+// CapStation — Section rhythm & surface variants
+// =============================================================
+
+.section {
+    position: relative;
+    padding-block: clamp(3.5rem, 2.5rem + 4vw, 6.5rem);
+}
+
+.section--tight {
+    padding-block: clamp(2.5rem, 2rem + 2vw, 4rem);
+}
+
+// Warm cream surface
+.section--cream {
+    background-color: var(--brand-cream);
+}
+
+// Premium dark-green surface (light text)
+.section--dark {
+    background: var(--gradient-brand);
+    color: rgba(#fff, 0.92);
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #fff;
+    }
+
+    .lead {
+        color: rgba(#fff, 0.8);
+    }
+}
+
+// Soft top/bottom hairline used between light sections
+.section--bordered {
+    border-top: 1px solid var(--brand-border);
+}
+
+// Centered intro block above a section's content
+.section-intro {
+    max-width: 46rem;
+    margin-inline: auto;
+    text-align: center;
+}

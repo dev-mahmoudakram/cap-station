@@ -1,0 +1,102 @@
+// =============================================================
+// CapStation — Footer (premium dark-green)
+// =============================================================
+
+.cap-footer {
+    position: relative;
+    background: var(--brand-primary-deep);
+    color: rgba(#fff, 0.78);
+    padding-block: clamp(3rem, 2.5rem + 2vw, 4.5rem);
+    overflow: hidden;
+
+    // Thin gold top accent (the brand "road" edge)
+    &::before {
+        content: '';
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline: 0;
+        height: 3px;
+        background: var(--gradient-gold);
+    }
+
+    &__brand {
+        display: inline-block;
+        font-size: 1.6rem;
+    }
+
+    &__desc {
+        max-width: 30rem;
+        color: rgba(#fff, 0.72);
+        line-height: 1.8;
+    }
+
+    &__heading {
+        font-size: 0.95rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #fff;
+        margin-bottom: 1rem;
+    }
+
+    &__links {
+        margin: 0;
+
+        li + li {
+            margin-top: 0.6rem;
+        }
+
+        a {
+            color: rgba(#fff, 0.72);
+
+            &:hover,
+            &:focus-visible {
+                color: var(--brand-secondary);
+            }
+        }
+    }
+
+    &__location {
+        color: rgba(#fff, 0.6);
+    }
+
+    &__social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 50%;
+        background: rgba(#fff, 0.08);
+        border: 1px solid rgba(#fff, 0.14);
+        color: #fff;
+        font-weight: 700;
+        transition: background-color 0.18s ease, transform 0.18s ease, color 0.18s ease;
+
+        &:hover,
+        &:focus-visible {
+            background: var(--brand-secondary);
+            color: var(--brand-black);
+            transform: translateY(-3px);
+        }
+    }
+
+    &__rule {
+        border-color: rgba(#fff, 0.12);
+        margin-block: 2.5rem 1.5rem;
+    }
+
+    &__bottom {
+        color: rgba(#fff, 0.6);
+    }
+
+    &__made {
+        color: rgba(#fff, 0.5);
+    }
+}
+
+@include reduced-motion {
+    .cap-footer__social-link:hover {
+        transform: none;
+    }
+}

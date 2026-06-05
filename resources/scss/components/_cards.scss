@@ -1,1 +1,48 @@
-// CapStation — Cards (expanded in Phase 2/3)
+// =============================================================
+// CapStation — Cards (base; feature/stat variants expand in Phase 3)
+// =============================================================
+
+.cap-card {
+    height: 100%;
+    background: var(--brand-white);
+    border: 1px solid var(--brand-border);
+    border-radius: $border-radius-lg;
+    padding: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+    box-shadow: 0 6px 22px rgba($brand-black, 0.04);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+
+    &__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.9rem;
+        background: rgba($brand-primary, 0.08);
+        color: var(--brand-primary);
+        margin-bottom: 1rem;
+    }
+
+    &__title {
+        font-size: 1.15rem;
+        margin-bottom: 0.4rem;
+    }
+
+    &__text {
+        color: rgba($brand-black, 0.7);
+        margin-bottom: 0;
+    }
+
+    // Subtle 4–8px lift on hover (brand rule)
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 38px rgba($brand-black, 0.08);
+        border-color: rgba($brand-primary, 0.28);
+    }
+}
+
+@include reduced-motion {
+    .cap-card:hover {
+        transform: none;
+    }
+}

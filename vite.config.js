@@ -13,6 +13,8 @@ export default defineConfig({
             scss: {
                 // Bootstrap 5.3 still uses @import / legacy color fns; silence its deprecations.
                 quietDeps: true,
+                // We intentionally use @import (Bootstrap-compatible); hush that one notice.
+                silenceDeprecations: ['import'],
             },
         },
     },
