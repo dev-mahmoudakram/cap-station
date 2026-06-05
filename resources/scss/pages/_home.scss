@@ -4,12 +4,17 @@
 
 // Offset anchor jumps for the sticky navbar
 html {
-    scroll-padding-top: 84px;
+    scroll-padding-top: var(--nav-height);
 }
 
-// --- Hero ------------------------------------------------------
+// --- Hero (full viewport height) -------------------------------
 .hero {
-    padding-block: clamp(2.5rem, 2rem + 3vw, 5rem) clamp(3rem, 2.5rem + 4vw, 6rem);
+    display: flex;
+    align-items: center;
+    min-height: calc(100svh - var(--nav-height));
+    padding-block: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+
+    > .container { width: 100%; }
 
     &__title {
         font-size: clamp(2rem, 1.4rem + 3.4vw, 3.4rem);
@@ -24,27 +29,26 @@ html {
 }
 
 // --- How it works steps ----------------------------------------
-.how-steps {
+.step-card {
     position: relative;
+    text-align: center;
 
+    // Dashed connector drawn from each badge centre to the next (desktop)
     @include media-breakpoint-up(lg) {
-        &::before {
+        &:not(:last-child)::after {
             content: '';
             position: absolute;
-            inset-inline: 14%;
-            top: 2rem;
+            top: 1.625rem; // badge vertical centre (badge is 3.25rem tall)
+            inset-inline-start: calc(50% + 30px);
+            width: calc(100% - 60px);
             border-top: 2px dashed var(--brand-border);
             z-index: 0;
         }
     }
-}
-
-.step-card {
-    position: relative;
-    z-index: 1;
-    text-align: start;
 
     &__num {
+        position: relative;
+        z-index: 1;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -61,7 +65,7 @@ html {
 
     &__icon {
         display: block;
-        color: var(--brand-primary);
+        color: var(--brand-primary-light);
         margin-bottom: 0.5rem;
     }
 
@@ -71,7 +75,7 @@ html {
     }
 
     &__text {
-        color: rgba($brand-black, 0.7);
+        color: var(--text-muted);
         margin-bottom: 0;
     }
 }
@@ -105,9 +109,9 @@ html {
         width: 2.6rem;
         height: 2.6rem;
         border-radius: 50%;
-        background: var(--brand-white);
+        background: var(--surface-1);
         border: 2px solid var(--brand-primary);
-        color: var(--brand-primary-deep);
+        color: var(--text-strong);
         font-weight: 800;
         z-index: 1;
     }
@@ -115,11 +119,11 @@ html {
     &__title {
         display: block;
         font-weight: 700;
-        color: var(--brand-primary-deep);
+        color: var(--text-strong);
     }
 
     &__text {
-        color: rgba($brand-black, 0.66);
+        color: var(--text-muted);
         font-size: 0.95rem;
     }
 
@@ -295,15 +299,27 @@ html {
         font-weight: 800;
         font-size: 1.15rem;
     }
+
+    // Decorative "accept" pill (not an interactive button)
+    &__accept {
+        margin-top: 1rem;
+        padding: 0.75rem 1rem;
+        text-align: center;
+        font-weight: 700;
+        color: var(--brand-black);
+        background: var(--brand-secondary);
+        border-radius: 50rem;
+        box-shadow: 0 10px 24px rgba($brand-secondary, 0.28);
+    }
 }
 
 // --- Statistics panel ------------------------------------------
 .stats-panel {
-    background: var(--brand-white);
+    background: var(--surface-1);
     border: 1px solid var(--brand-border);
     border-radius: $border-radius-xl;
     padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
-    box-shadow: 0 16px 44px rgba($brand-black, 0.05);
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.3);
 
     @include media-breakpoint-up(lg) {
         .col-lg-3 + .col-lg-3 .stat-card {
@@ -318,11 +334,11 @@ html {
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
-    background: var(--brand-white);
+    background: var(--surface-1);
     border: 1px solid var(--brand-border);
     border-radius: $border-radius-lg;
     padding: 1.6rem;
-    box-shadow: 0 8px 26px rgba($brand-black, 0.05);
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.28);
 
     &__stars {
         color: var(--brand-secondary);
@@ -331,7 +347,7 @@ html {
 
     &__quote {
         margin: 0;
-        color: rgba($brand-black, 0.8);
+        color: var(--text);
         line-height: 1.85;
         font-size: 1.02rem;
     }
@@ -350,18 +366,18 @@ html {
         width: 2.7rem;
         height: 2.7rem;
         border-radius: 50%;
-        background: rgba($brand-primary, 0.1);
-        color: var(--brand-primary);
+        background: rgba($brand-primary, 0.18);
+        color: var(--brand-primary-light);
         font-weight: 800;
         flex: 0 0 auto;
     }
 
     &__meta { display: flex; flex-direction: column; }
 
-    &__name { font-weight: 700; color: var(--brand-primary-deep); }
+    &__name { font-weight: 700; color: var(--text-strong); }
 
     &__role {
         font-size: 0.85rem;
-        color: rgba($brand-black, 0.6);
+        color: var(--text-muted);
     }
 }

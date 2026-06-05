@@ -4,12 +4,12 @@
 
 .cap-card {
     height: 100%;
-    background: var(--brand-white);
+    background: var(--surface-1);
     border: 1px solid var(--brand-border);
     border-radius: $border-radius-lg;
     padding: clamp(1.25rem, 1rem + 1vw, 1.75rem);
-    box-shadow: 0 6px 22px rgba($brand-black, 0.04);
-    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background-color 0.22s ease;
 
     &__icon {
         display: inline-flex;
@@ -18,8 +18,8 @@
         width: 3rem;
         height: 3rem;
         border-radius: 0.9rem;
-        background: rgba($brand-primary, 0.08);
-        color: var(--brand-primary);
+        background: rgba($brand-primary, 0.18);
+        color: var(--brand-primary-light);
         margin-bottom: 1rem;
     }
 
@@ -29,21 +29,22 @@
     }
 
     &__text {
-        color: rgba($brand-black, 0.7);
+        color: var(--text-muted);
         margin-bottom: 0;
     }
 
     // Subtle 4–8px lift on hover (brand rule)
     &:hover {
         transform: translateY(-6px);
-        box-shadow: 0 16px 38px rgba($brand-black, 0.08);
-        border-color: rgba($brand-primary, 0.28);
+        background: var(--surface-2);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+        border-color: rgba($brand-primary-light, 0.4);
     }
 }
 
 .cap-card__icon--gold {
-    background: rgba($brand-secondary, 0.14);
-    color: var(--brand-secondary-dark);
+    background: rgba($brand-secondary, 0.18);
+    color: var(--brand-secondary);
 }
 
 // --- Stat card -------------------------------------------------
@@ -58,8 +59,8 @@
         width: 2.6rem;
         height: 2.6rem;
         border-radius: 0.8rem;
-        background: rgba($brand-primary, 0.08);
-        color: var(--brand-primary);
+        background: rgba($brand-primary, 0.18);
+        color: var(--brand-primary-light);
         margin-bottom: 0.6rem;
     }
 
@@ -67,14 +68,14 @@
         font-weight: 800;
         font-size: clamp(2rem, 1.5rem + 2.4vw, 3rem);
         line-height: 1;
-        color: var(--brand-primary-deep);
+        color: var(--text-strong);
         letter-spacing: -0.01em;
     }
 
     &__label {
         margin-top: 0.4rem;
         font-weight: 600;
-        color: rgba($brand-black, 0.62);
+        color: var(--text-muted);
     }
 
     // On dark surfaces

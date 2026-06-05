@@ -3,7 +3,7 @@
     $dir = config("locale.meta.$locale.dir", 'rtl');
 @endphp
 <!DOCTYPE html>
-<html lang="{{ $locale }}" dir="{{ $dir }}">
+<html lang="{{ $locale }}" dir="{{ $dir }}" data-bs-theme="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

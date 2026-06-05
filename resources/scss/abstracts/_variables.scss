@@ -92,9 +92,31 @@ $spacer: 1rem;
     --brand-white:          #{$brand-white};
     --brand-cream:          #{$brand-cream};
     --brand-muted:          #{$brand-muted};
-    --brand-border:         #{$brand-border};
+
+    // --- Dark theme surfaces & text -----------------------
+    --surface-0:    #050807; // page background (deepest)
+    --surface-1:    #0C1711; // cards / panels
+    --surface-2:    #14241B; // elevated tiles / hover
+    --surface-band: #081009; // alternate section band (replaces cream)
+    --text:         #EFF3EC; // body text
+    --text-strong:  #FFFFFF; // headings
+    --text-muted:   rgba(239, 243, 236, 0.62);
+
+    // Borders re-pointed for dark UI (consumed everywhere as --brand-border)
+    --brand-border: rgba(255, 255, 255, 0.10);
+    --border-strong: rgba(255, 255, 255, 0.16);
+
+    // Sticky navbar height (used for hero sizing & scroll offset)
+    --nav-height: 112px;
 
     // Signature gradients reused across CTAs / premium sections
     --gradient-brand: linear-gradient(135deg, #{$brand-primary} 0%, #{$brand-primary-deep} 100%);
     --gradient-gold:  linear-gradient(135deg, #{$brand-secondary} 0%, #{$brand-secondary-dark} 100%);
+    --gradient-page:  radial-gradient(120% 80% at 80% -10%, rgba(0, 154, 75, 0.16), transparent 60%),
+                      radial-gradient(90% 70% at 0% 110%, rgba(216, 163, 1, 0.07), transparent 55%);
+
+    // Subdued dark surfaces for premium bands (toned down for dark theme)
+    --gradient-dark: linear-gradient(160deg, #0B2418 0%, #050807 100%);
+    --gradient-cta:  linear-gradient(135deg, #103A24 0%, #07160E 100%);
+    --gradient-footer: linear-gradient(180deg, #08160F 0%, #050807 100%);
 }

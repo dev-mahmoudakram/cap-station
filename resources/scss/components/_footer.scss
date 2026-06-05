@@ -4,7 +4,7 @@
 
 .cap-footer {
     position: relative;
-    background: var(--brand-primary-deep);
+    background: var(--gradient-footer);
     color: rgba(#fff, 0.78);
     padding-block: clamp(3rem, 2.5rem + 2vw, 4.5rem);
     overflow: hidden;
@@ -58,6 +58,20 @@
 
     &__location {
         color: rgba(#fff, 0.6);
+    }
+
+    &__contact li {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+    }
+
+    &__contact-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brand-secondary);
+        flex: 0 0 auto;
     }
 
     &__social-link {

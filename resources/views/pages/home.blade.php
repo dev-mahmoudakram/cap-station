@@ -23,8 +23,11 @@
                     <h1 class="hero__title" data-animate="fade-up">{{ __('site.hero.title') }}</h1>
                     <p class="lead mt-3" data-animate="fade-up">{{ __('site.hero.text') }}</p>
                     <div class="hero__actions d-flex flex-wrap gap-2 mt-4" data-animate="fade-up">
-                        <a href="#join" class="btn btn-primary btn-lg">{{ __('site.hero.cta_primary') }}</a>
-                        <a href="#how-it-works" class="btn btn-outline-primary btn-lg">{{ __('site.hero.cta_secondary') }}</a>
+                        <a href="#join" class="btn btn-premium btn-lg">{{ __('site.hero.cta_primary') }}</a>
+                        <a href="#how-it-works" class="btn btn-ghost btn-lg">
+                            {{ __('site.hero.cta_secondary') }}
+                            <x-icon name="arrow-right" :size="18" class="flip-rtl" />
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -199,7 +202,7 @@
                             </div>
                         </div>
 
-                        <button type="button" class="btn btn-gold w-100 mt-3">{{ $mock['cta'] }}</button>
+                        <div class="app-mock__accept" aria-hidden="true">{{ $mock['cta'] }}</div>
                     </div>
                 </div>
             </div>

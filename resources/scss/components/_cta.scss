@@ -7,9 +7,9 @@
     overflow: hidden;
     border-radius: $border-radius-xl;
     padding: clamp(2.5rem, 2rem + 4vw, 5rem) clamp(1.5rem, 1rem + 3vw, 4rem);
-    background: var(--gradient-brand);
+    background: var(--gradient-cta);
     color: #fff;
-    box-shadow: 0 30px 70px rgba($brand-primary-deep, 0.35);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
     text-align: center;
 
     // Gold hairline frame

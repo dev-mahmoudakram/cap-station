@@ -28,6 +28,7 @@
         'check'        => '<path d="M5 12.5l4.5 4.5L19 7"/>',
         'arrow-right'  => '<path d="M5 12h14M13 6l6 6-6 6"/>',
         'phone'        => '<path d="M6 3h3l1.5 5-2 1.5a12 12 0 0 0 6 6l1.5-2 5 1.5V21a2 2 0 0 1-2 2A18 18 0 0 1 4 5a2 2 0 0 1 2-2z"/>',
+        'mail'         => '<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7.5 8 5.5 8-5.5"/>',
     ];
 
     $svg = $icons[$name] ?? '<circle cx="12" cy="12" r="3"/>';

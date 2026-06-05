@@ -3,16 +3,16 @@
 // =============================================================
 
 .cap-navbar {
-    background: rgba($brand-white, 0.82);
-    -webkit-backdrop-filter: blur(14px) saturate(150%);
-    backdrop-filter: blur(14px) saturate(150%);
+    background: rgba($brand-black, 0.62);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    backdrop-filter: blur(16px) saturate(150%);
     border-bottom: 1px solid var(--brand-border);
     transition: box-shadow 0.25s ease, background-color 0.25s ease;
 
     // Toggled by JS once the page is scrolled (Phase 5)
     &.is-scrolled {
-        background: rgba($brand-white, 0.94);
-        box-shadow: 0 8px 28px rgba($brand-black, 0.07);
+        background: rgba($brand-black, 0.9);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
 
     &__logo {
@@ -22,17 +22,30 @@
 
     .nav-link {
         font-weight: 600;
-        color: rgba($brand-black, 0.72);
+        color: var(--text-muted);
         border-radius: 0.5rem;
         position: relative;
 
         &:hover,
         &:focus-visible {
-            color: var(--brand-primary);
+            color: var(--brand-primary-light);
         }
 
         &.active {
-            color: var(--brand-primary-deep);
+            color: var(--text-strong);
+
+            // Underline indicator on the inline (desktop) nav
+            @include media-breakpoint-up(lg) {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    inset-inline: 0.9rem;
+                    bottom: 0.1rem;
+                    height: 2px;
+                    border-radius: 2px;
+                    background: var(--brand-primary-light);
+                }
+            }
         }
     }
 
@@ -45,15 +58,15 @@
         border-radius: 50rem;
         font-weight: 600;
         font-size: 0.92rem;
-        color: var(--brand-primary-deep);
+        color: var(--text);
         border: 1px solid var(--brand-border);
-        background: rgba($brand-primary, 0.04);
+        background: rgba(255, 255, 255, 0.04);
 
         &:hover,
         &:focus-visible {
-            color: var(--brand-primary);
-            border-color: rgba($brand-primary, 0.4);
-            background: rgba($brand-primary, 0.08);
+            color: var(--brand-primary-light);
+            border-color: rgba($brand-primary-light, 0.5);
+            background: rgba($brand-primary, 0.14);
         }
     }
 

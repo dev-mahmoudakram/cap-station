@@ -54,25 +54,41 @@
     border: 0;
     box-shadow: 0 10px 28px rgba($brand-primary-deep, 0.35);
 
-    &::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        padding: 1px;
-        background: var(--gradient-gold);
-        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        opacity: 0.9;
-        pointer-events: none;
-    }
-
     &:hover {
         color: #fff;
         transform: translateY(-2px);
         box-shadow: 0 14px 34px rgba($brand-primary-deep, 0.45);
+    }
+}
+
+// Outline primary — lighten for the dark theme so text stays legible
+.btn-outline-primary {
+    --bs-btn-color: #{$brand-primary-light};
+    --bs-btn-border-color: rgba($brand-primary-light, 0.55);
+    --bs-btn-hover-bg: #{$brand-primary};
+    --bs-btn-hover-border-color: #{$brand-primary};
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-bg: #{$brand-primary-dark};
+    --bs-btn-active-border-color: #{$brand-primary-dark};
+}
+
+// Ghost button — premium dark-theme outline with a subtle glass fill
+.btn-ghost {
+    --bs-btn-color: var(--text-strong);
+    --bs-btn-bg: rgba(255, 255, 255, 0.05);
+    --bs-btn-border-color: var(--border-strong);
+    --bs-btn-hover-color: var(--text-strong);
+    --bs-btn-hover-bg: rgba(255, 255, 255, 0.1);
+    --bs-btn-hover-border-color: rgba(255, 255, 255, 0.32);
+    --bs-btn-active-bg: rgba(255, 255, 255, 0.08);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+
+    &:hover {
+        transform: translateY(-2px);
     }
 }
 

@@ -17,8 +17,8 @@
     ];
 @endphp
 
-<header>
-    <nav class="navbar navbar-expand-lg cap-navbar sticky-top" aria-label="{{ __('site.nav.home') }}">
+<header class="cap-header sticky-top">
+    <nav class="navbar navbar-expand-lg cap-navbar" aria-label="{{ __('site.nav.home') }}">
         <div class="container">
             {{-- Brand --}}
             <a class="navbar-brand cap-navbar__brand" href="{{ route('home') }}" aria-label="{{ __('site.brand') }}">

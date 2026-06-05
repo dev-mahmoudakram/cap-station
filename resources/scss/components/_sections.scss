@@ -11,14 +11,16 @@
     padding-block: clamp(2.5rem, 2rem + 2vw, 4rem);
 }
 
-// Warm cream surface
+// Elevated dark band (was cream in the light theme)
 .section--cream {
-    background-color: var(--brand-cream);
+    background-color: var(--surface-band);
+    border-block: 1px solid var(--brand-border);
 }
 
-// Premium dark-green surface (light text)
+// Premium dark surface (light text) — subdued for the dark theme
 .section--dark {
-    background: var(--gradient-brand);
+    background: var(--gradient-dark);
+    border-block: 1px solid var(--brand-border);
     color: rgba(#fff, 0.92);
 
     h1, h2, h3, h4, h5, h6 {

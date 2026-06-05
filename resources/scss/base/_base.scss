@@ -13,17 +13,38 @@ html {
 }
 
 body {
-    background-color: var(--brand-white);
-    color: var(--brand-black);
+    background-color: var(--surface-0);
+    background-image: var(--gradient-page);
+    background-attachment: fixed;
+    color: var(--text);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+    // `clip` prevents horizontal overflow WITHOUT turning <body> into a
+    // scroll container — which would otherwise break the sticky navbar.
+    overflow-x: clip;
+}
+
+// Re-point Bootstrap's dark theme tokens to CapStation brand values so
+// native components (accordion, close button, borders) match the palette.
+[data-bs-theme='dark'] {
+    --bs-body-bg: var(--surface-0);
+    --bs-body-color: var(--text);
+    --bs-emphasis-color: var(--text-strong);
+    --bs-secondary-color: var(--text-muted);
+    --bs-border-color: var(--brand-border);
+    --bs-secondary-bg: var(--surface-1);
+    --bs-tertiary-bg: var(--surface-2);
 }
 
 img,
 svg {
     max-width: 100%;
     height: auto;
+}
+
+// Scroll targets are focused programmatically (not tabbable) — no outline.
+[tabindex='-1']:focus {
+    outline: none;
 }
 
 // Accessible skip link (revealed on focus)

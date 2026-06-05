@@ -1,47 +1,67 @@
 // =============================================================
-// CapStation — Hero & animated road/car visual
-// (Hero section layout is composed in Phase 4; motion in Phase 5)
+// CapStation — Hero visual (image-based, dark theme)
 // =============================================================
 
 .hero-visual {
     position: relative;
     width: 100%;
-    max-width: 560px;
+    max-width: 460px;
     margin-inline: auto;
+    padding-block: 1rem;
 
     &__glow {
         position: absolute;
-        inset: 6% 4% 10%;
-        background: radial-gradient(60% 60% at 60% 40%, rgba($brand-primary-light, 0.28), transparent 70%);
-        filter: blur(20px);
+        inset: 4% 2% 6%;
+        background:
+            radial-gradient(55% 55% at 60% 42%, rgba($brand-primary-light, 0.45), transparent 70%),
+            radial-gradient(40% 40% at 25% 80%, rgba($brand-secondary, 0.18), transparent 70%);
+        filter: blur(26px);
         z-index: 0;
         pointer-events: none;
     }
 
-    &__svg {
-        position: relative;
-        z-index: 1;
+    &__route {
+        position: absolute;
+        inset-inline: 0;
+        bottom: 4%;
         width: 100%;
-        height: auto;
+        height: 120px;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    &__img {
+        position: relative;
+        z-index: 2;
         display: block;
-        overflow: visible;
+        width: 100%;
+        max-width: 440px;
+        height: auto;
+        margin-inline: auto;
+        filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.55));
+        animation: hero-float 6s ease-in-out infinite;
     }
 }
 
-// Floating glass chips
+@keyframes hero-float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+}
+
+// Floating glass chips (dark)
 .hero-chip {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
     padding: 0.6rem 0.85rem;
-    background: rgba($brand-white, 0.78);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--brand-border);
+    background: rgba(12, 23, 17, 0.78);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-strong);
     border-radius: 0.9rem;
-    box-shadow: 0 12px 30px rgba($brand-black, 0.1);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
 
     &__icon {
         display: inline-flex;
@@ -50,12 +70,12 @@
         width: 2rem;
         height: 2rem;
         border-radius: 0.6rem;
-        background: rgba($brand-primary, 0.1);
-        color: var(--brand-primary);
+        background: rgba($brand-primary, 0.22);
+        color: var(--brand-primary-light);
 
         &--gold {
-            background: rgba($brand-secondary, 0.16);
-            color: var(--brand-secondary-dark);
+            background: rgba($brand-secondary, 0.22);
+            color: var(--brand-secondary);
         }
     }
 
@@ -67,32 +87,42 @@
 
     &__label {
         font-size: 0.72rem;
-        color: rgba($brand-black, 0.55);
+        color: var(--text-muted);
     }
 
     &__value {
         font-weight: 700;
         font-size: 0.95rem;
-        color: var(--brand-primary-deep);
+        color: var(--text-strong);
     }
 
     &--route {
-        inset-block-start: 12%;
-        inset-inline-start: -2%;
+        inset-block-start: 10%;
+        inset-inline-start: -10%;
     }
 
     &--wallet {
-        inset-block-end: 12%;
-        inset-inline-end: -2%;
+        inset-block-end: 16%;
+        inset-inline-end: -1%;
     }
 }
 
-// Trim floating chips on small screens so they don't overflow
+// RTL-specific wallet placement
+[dir='rtl'] .hero-chip--wallet {
+    inset-inline-end: -30%;
+}
+
 @media (max-width: 575.98px) {
     .hero-chip {
         padding: 0.45rem 0.6rem;
 
-        &--route { inset-inline-start: 0; }
-        &--wallet { inset-inline-end: 0; }
+        &--route { inset-block-start: 6%; inset-inline-start: 2%; }
+        &--wallet { inset-block-end: 12%; inset-inline-end: 2%; }
+    }
+}
+
+@include reduced-motion {
+    .hero-visual__img {
+        animation: none;
     }
 }

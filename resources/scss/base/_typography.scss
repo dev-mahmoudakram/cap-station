@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: 800;
     line-height: 1.25;
-    color: var(--brand-primary-deep);
+    color: var(--text-strong);
     margin-bottom: 0.5em;
 }
 
@@ -32,11 +32,12 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .section-title {
-    font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.75rem);
+    font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+    line-height: 1.18;
 }
 
 .lead {
-    color: rgba($brand-black, 0.72);
+    color: var(--text-muted);
     font-size: clamp(1.05rem, 1rem + 0.4vw, 1.25rem);
 }
 
@@ -46,7 +47,7 @@ h1, h2, h3, h4, h5, h6,
     font-size: 0.85rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--brand-primary);
+    color: var(--brand-primary-light);
 }
 
 // Brand wordmark (Cap green · Station gold), used in footer/nav fallback

@@ -34,6 +34,7 @@ return [
         'text'          => 'CapStation brings captain opportunities and support services into one smart experience — so you move faster, choose better, and grow your income with confidence.',
         'cta_primary'   => 'Get started',
         'cta_secondary' => 'See how it works',
+        'image_alt'     => 'CapStation app with a captain vehicle',
 
         'chip_route_label'  => 'Nearest trip',
         'chip_route_value'  => '3 km away',
@@ -90,6 +91,8 @@ return [
             ['icon' => 'bell',    'title' => 'Maintenance reminders', 'text' => 'Timely alerts to service your vehicle.'],
             ['icon' => 'headset', 'title' => 'Close support',        'text' => 'A support team that has your back.'],
             ['icon' => 'gift',    'title' => 'Rewards',              'text' => 'Incentives and rewards that value your effort.'],
+            ['icon' => 'shield-check', 'title' => 'Safety & trust',  'text' => 'Secure operations and a trusted account that protect your time and effort.'],
+            ['icon' => 'clock',        'title' => 'Full flexibility', 'text' => 'Choose your hours and opportunities to fit your day.'],
         ],
     ],
 
@@ -103,6 +106,7 @@ return [
             ['icon' => 'sliders',      'title' => 'Smarter matching',       'text' => 'Opportunities matched to the right captain automatically.'],
             ['icon' => 'chart-bar',    'title' => 'Reporting & performance', 'text' => 'Dashboards and metrics that track operation quality.'],
             ['icon' => 'shield-check', 'title' => 'Quality control',        'text' => 'Standards that raise service reliability.'],
+            ['icon' => 'headset',      'title' => 'Dedicated support',      'text' => 'An account team that supports your operations and resolves issues fast.'],
         ],
     ],
 
