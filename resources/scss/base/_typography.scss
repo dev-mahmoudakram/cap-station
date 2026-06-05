@@ -1,0 +1,26 @@
+// =============================================================
+// CapStation — Typography
+// Arabic (Tajawal) is the default; Latin (Inter) applied on [lang]
+// =============================================================
+
+body {
+    font-family: $font-family-arabic;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+}
+
+// English / LTR content uses Inter
+[lang='en'],
+[dir='ltr'] {
+    font-family: $font-family-latin;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--brand-primary-deep);
+}
+
+a {
+    text-decoration: none;
+}

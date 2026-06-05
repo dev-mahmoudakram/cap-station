@@ -1,0 +1,30 @@
+// =============================================================
+// CapStation — main stylesheet entry
+// Order matters: brand tokens + Bootstrap overrides MUST come
+// before Bootstrap so the framework picks up our values.
+// =============================================================
+
+// 1. Brand tokens & Bootstrap variable overrides
+@import 'abstracts/variables';
+
+// 2. Bootstrap (consumes the overrides above)
+@import 'bootstrap/scss/bootstrap';
+
+// 3. Project mixins (no CSS output)
+@import 'abstracts/mixins';
+
+// 4. Base layer
+@import 'base/base';
+@import 'base/typography';
+@import 'base/rtl';
+
+// 5. Components
+@import 'components/buttons';
+@import 'components/navbar';
+@import 'components/cards';
+@import 'components/sections';
+@import 'components/hero';
+@import 'components/animations';
+
+// 6. Pages
+@import 'pages/home';

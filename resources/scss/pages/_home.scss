@@ -1,0 +1,25 @@
+// =============================================================
+// CapStation — Home page (expanded in Phase 4)
+// Phase 1: minimal styling for the foundation placeholder.
+// =============================================================
+
+.foundation-check {
+    min-height: 70vh;
+    text-align: center;
+
+    &__logo {
+        width: 180px;
+        margin-inline: auto;
+    }
+
+    &__badge {
+        display: inline-block;
+        padding: 0.35rem 0.9rem;
+        border-radius: 999px;
+        background: var(--brand-cream);
+        color: var(--brand-primary-dark);
+        border: 1px solid var(--brand-border);
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+}

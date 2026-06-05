@@ -1,0 +1,9 @@
+// CapStation — Animation utilities (expanded in Phase 5)
+
+// Elements that animate in start hidden ONLY when motion is allowed
+// and JS is present; the .is-ready flag is added by app.js.
+@media (prefers-reduced-motion: no-preference) {
+    .js-ready [data-animate] {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,44 @@
+// =============================================================
+// CapStation — Base styles
+// =============================================================
+
+html {
+    scroll-behavior: smooth;
+}
+
+@include reduced-motion {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    background-color: var(--brand-white);
+    color: var(--brand-black);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+// Accessible skip link (revealed on focus)
+.skip-link {
+    position: absolute;
+    inset-inline-start: 1rem;
+    top: -3rem;
+    z-index: 2000;
+    padding: 0.5rem 1rem;
+    background: var(--brand-primary);
+    color: #fff;
+    border-radius: 0.5rem;
+    transition: top 0.2s ease;
+
+    &:focus {
+        top: 1rem;
+    }
+}

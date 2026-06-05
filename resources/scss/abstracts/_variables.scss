@@ -1,0 +1,68 @@
+// =============================================================
+// CapStation — Brand tokens & Bootstrap overrides
+// Palette source: docs/color-palette.md (extracted from logo)
+// =============================================================
+
+// --- Brand palette (SCSS) ---------------------------------
+$brand-primary:        #007038; // main green
+$brand-primary-dark:   #005F2E; // header/footer, hover
+$brand-primary-deep:   #003E21; // premium dark bg
+$brand-primary-light:  #009A4B; // highlights, animated lines
+$brand-secondary:      #D8A301; // gold accent
+$brand-secondary-dark: #B78300; // gold hover
+$brand-olive:          #629C2D; // secondary accent
+$brand-black:          #050807; // text on light
+$brand-white:          #FFFFFF; // light surfaces
+$brand-cream:          #FFF8E6; // warm sections
+$brand-muted:          #6B7280; // muted text
+$brand-border:         rgba($brand-primary, 0.14);
+
+// --- Typography ------------------------------------------
+$font-family-arabic: 'Tajawal', 'Segoe UI', system-ui, sans-serif;
+$font-family-latin:  'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+// --- Bootstrap overrides (must precede Bootstrap import) ---
+$primary:   $brand-primary;
+$secondary: $brand-secondary;
+$dark:      $brand-primary-deep;
+$light:     $brand-cream;
+$body-color: $brand-black;
+$body-bg:    $brand-white;
+
+$font-family-sans-serif: $font-family-arabic;
+$headings-color: $brand-primary-deep;
+$headings-font-weight: 800;
+
+$border-radius:    0.75rem;
+$border-radius-sm: 0.5rem;
+$border-radius-lg: 1.25rem;
+$border-radius-xl: 1.75rem;
+
+$enable-negative-margins: true;
+$enable-smooth-scroll: true;
+
+// Theme color map additions for utility classes
+$brand-theme-colors: (
+    'brand':       $brand-primary,
+    'brand-dark':  $brand-primary-dark,
+    'brand-deep':  $brand-primary-deep,
+    'brand-light': $brand-primary-light,
+    'gold':        $brand-secondary,
+    'cream':       $brand-cream,
+);
+
+// --- Mirror tokens as CSS custom properties ---------------
+:root {
+    --brand-primary:        #{$brand-primary};
+    --brand-primary-dark:   #{$brand-primary-dark};
+    --brand-primary-deep:   #{$brand-primary-deep};
+    --brand-primary-light:  #{$brand-primary-light};
+    --brand-secondary:      #{$brand-secondary};
+    --brand-secondary-dark: #{$brand-secondary-dark};
+    --brand-olive:          #{$brand-olive};
+    --brand-black:          #{$brand-black};
+    --brand-white:          #{$brand-white};
+    --brand-cream:          #{$brand-cream};
+    --brand-muted:          #{$brand-muted};
+    --brand-border:         #{$brand-border};
+}
