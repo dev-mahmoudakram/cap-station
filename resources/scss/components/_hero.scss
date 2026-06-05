@@ -48,6 +48,11 @@
     50%      { transform: translateY(-12px); }
 }
 
+// Smaller hero illustration on stacked (mobile / tablet) layouts
+@media (max-width: 991.98px) {
+    .hero-visual { max-width: 300px; }
+}
+
 // Floating glass chips (dark)
 .hero-chip {
     position: absolute;
@@ -96,28 +101,39 @@
         color: var(--text-strong);
     }
 
+    // Mobile-first: keep chips INSIDE the visual to avoid page overflow.
     &--route {
-        inset-block-start: 10%;
-        inset-inline-start: -10%;
+        inset-block-start: 6%;
+        inset-inline-start: 2%;
     }
 
     &--wallet {
-        inset-block-end: 16%;
-        inset-inline-end: -1%;
+        inset-block-end: 12%;
+        inset-inline-end: 2%;
+    }
+
+    @media (max-width: 575.98px) {
+        padding: 0.45rem 0.6rem;
+    }
+
+    // Desktop: let the chips float out beyond the image edges.
+    @include media-breakpoint-up(lg) {
+        &--route {
+            inset-block-start: 10%;
+            inset-inline-start: -10%;
+        }
+
+        &--wallet {
+            inset-block-end: 16%;
+            inset-inline-end: -16%;
+        }
     }
 }
 
-// RTL-specific wallet placement
-[dir='rtl'] .hero-chip--wallet {
-    inset-inline-end: -30%;
-}
-
-@media (max-width: 575.98px) {
-    .hero-chip {
-        padding: 0.45rem 0.6rem;
-
-        &--route { inset-block-start: 6%; inset-inline-start: 2%; }
-        &--wallet { inset-block-end: 12%; inset-inline-end: 2%; }
+// RTL desktop wallet placement (only where there's room for it)
+@include media-breakpoint-up(lg) {
+    [dir='rtl'] .hero-chip--wallet {
+        inset-inline-end: -30%;
     }
 }
 

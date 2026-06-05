@@ -48,7 +48,7 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav mx-lg-auto mb-3 mb-lg-0 gap-lg-1">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('home') }}">
+                            <a class="nav-link active" aria-current="page" href="#top">
                                 {{ __('site.nav.home') }}
                             </a>
                         </li>

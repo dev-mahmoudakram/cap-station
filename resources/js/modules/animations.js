@@ -116,7 +116,6 @@ function initScrollSpy() {
         })
         .filter(Boolean);
 
-    const homeLink = links.find((l) => ! (l.getAttribute('href') || '').includes('#'));
     if (! sections.length) return;
 
     const setActive = (activeLink) => {
@@ -130,13 +129,11 @@ function initScrollSpy() {
 
     const onScroll = () => {
         const probe = window.innerHeight * 0.3;
-        let current = null;
+        let currentLink = sections[0].link; // default to the first (hero) link
         sections.forEach((item) => {
-            if (item.section.getBoundingClientRect().top <= probe) current = item;
+            if (item.section.getBoundingClientRect().top <= probe) currentLink = item.link;
         });
-
-        if (window.scrollY < 80 && homeLink) setActive(homeLink);
-        else setActive(current ? current.link : homeLink);
+        setActive(currentLink);
     };
 
     onScroll();

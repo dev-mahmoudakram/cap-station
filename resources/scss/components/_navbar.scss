@@ -3,16 +3,31 @@
 // =============================================================
 
 .cap-navbar {
-    background: rgba($brand-black, 0.62);
-    -webkit-backdrop-filter: blur(16px) saturate(150%);
-    backdrop-filter: blur(16px) saturate(150%);
+    position: relative;
     border-bottom: 1px solid var(--brand-border);
-    transition: box-shadow 0.25s ease, background-color 0.25s ease;
+    transition: box-shadow 0.25s ease;
+
+    // Glass background lives on a pseudo-element. If backdrop-filter sat on
+    // .cap-navbar itself, the navbar would become a containing block for the
+    // fixed offcanvas and trap (break) the mobile menu.
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: rgba($brand-black, 0.62);
+        -webkit-backdrop-filter: blur(16px) saturate(150%);
+        backdrop-filter: blur(16px) saturate(150%);
+        transition: background-color 0.25s ease;
+    }
 
     // Toggled by JS once the page is scrolled (Phase 5)
     &.is-scrolled {
-        background: rgba($brand-black, 0.9);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    &.is-scrolled::before {
+        background: rgba($brand-black, 0.9);
     }
 
     &__logo {
@@ -94,4 +109,12 @@
 [dir='rtl'] .cap-navbar__panel.offcanvas-end.show,
 [dir='rtl'] .cap-navbar__panel.offcanvas-end.showing {
     transform: none;
+}
+
+// RTL: mirror the offcanvas close button to the start (left) edge.
+// Bootstrap's LTR stylesheet uses margin-left:auto, which mis-positions it
+// in RTL — swap the auto/negative margins to the opposite side.
+[dir='rtl'] .cap-navbar__panel .offcanvas-header .btn-close {
+    margin-left: calc(-0.5 * var(--bs-offcanvas-padding-x, 1rem));
+    margin-right: auto;
 }

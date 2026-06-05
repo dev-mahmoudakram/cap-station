@@ -21,6 +21,16 @@ html {
         line-height: 1.15;
         letter-spacing: -0.01em;
     }
+
+    // Stacked (mobile/tablet): content-driven height with comfortable padding
+    @include media-breakpoint-down(lg) {
+        min-height: 0;
+        padding-block: 2.5rem 3rem;
+        text-align: center;
+
+        .hero__content { align-items: center; }
+        .hero__actions { justify-content: center; }
+    }
 }
 
 // --- Solution card accent --------------------------------------
@@ -116,6 +126,12 @@ html {
         z-index: 1;
     }
 
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+
     &__title {
         display: block;
         font-weight: 700;
@@ -130,12 +146,20 @@ html {
     // Base track (vertical on mobile)
     &__track {
         position: absolute;
-        inset-inline-start: 1.3rem;
+        inset-inline-start: 1.3rem; // LTR: centred on the dot
         top: 1.3rem;
         bottom: 1.3rem;
         width: 3px;
         background: var(--brand-border);
         border-radius: 3px;
+
+        // RTL needs a larger start offset to land on the dot centre.
+        // Scoped to mobile so it doesn't override the desktop horizontal track.
+        @include media-breakpoint-down(lg) {
+            [dir='rtl'] & {
+                inset-inline-start: 2.4rem;
+            }
+        }
     }
 
     &__progress {

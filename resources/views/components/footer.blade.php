@@ -39,7 +39,7 @@
             </div>
 
             {{-- Explore --}}
-            <div class="col-6 col-lg-3">
+            <div class="col-12 col-lg-3">
                 <h2 class="cap-footer__heading">{{ __('site.footer.explore') }}</h2>
                 <ul class="list-unstyled cap-footer__links">
                     <li><a href="{{ route('home') }}">{{ __('site.nav.home') }}</a></li>
@@ -50,7 +50,7 @@
             </div>
 
             {{-- Contact --}}
-            <div class="col-6 col-lg-4">
+            <div class="col-12 col-lg-4">
                 <h2 class="cap-footer__heading">{{ __('site.footer.contact') }}</h2>
                 <ul class="list-unstyled cap-footer__links cap-footer__contact">
                     <li>

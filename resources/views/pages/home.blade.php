@@ -143,8 +143,10 @@
                     @foreach (__('site.journey.steps') as $i => $step)
                         <li class="journey__step" data-animate="fade-up">
                             <span class="journey__dot">{{ $i + 1 }}</span>
-                            <span class="journey__title">{{ $step['title'] }}</span>
-                            <span class="journey__text">{{ $step['text'] }}</span>
+                            <span class="journey__body">
+                                <span class="journey__title">{{ $step['title'] }}</span>
+                                <span class="journey__text">{{ $step['text'] }}</span>
+                            </span>
                         </li>
                     @endforeach
                 </ol>
