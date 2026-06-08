@@ -2,16 +2,6 @@
 
 @section('title', __('site.meta.title'))
 
-@php
-    // Statistics — placeholder figures; replace with real business data.
-    $stats = [
-        ['value' => 10,  'prefix' => '+', 'suffix' => 'K', 'icon' => 'users',    'label' => __('site.stats.labels.captains')],
-        ['value' => 250, 'prefix' => '+', 'suffix' => 'K', 'icon' => 'inbox',    'label' => __('site.stats.labels.opportunities')],
-        ['display' => '24/7',                               'icon' => 'clock',    'label' => __('site.stats.labels.support')],
-        ['value' => 15,  'prefix' => '+',                   'icon' => 'building', 'label' => __('site.stats.labels.cities')],
-    ];
-@endphp
-
 @section('content')
 
     {{-- 1. Hero ------------------------------------------------------ --}}
@@ -22,6 +12,10 @@
                     <span class="text-eyebrow d-inline-block mb-3" data-animate="fade-up">{{ __('site.hero.eyebrow') }}</span>
                     <h1 class="hero__title" data-animate="fade-up">{{ __('site.hero.title') }}</h1>
                     <p class="lead mt-3" data-animate="fade-up">{{ __('site.hero.text') }}</p>
+                    <p class="hero__mission mt-3" data-animate="fade-up">
+                        <span class="hero__mission-label">{{ __('site.hero.mission_label') }}</span>
+                        <span class="hero__mission-text">{{ __('site.hero.mission') }}</span>
+                    </p>
                     <div class="hero__actions d-flex flex-wrap gap-2 mt-4" data-animate="fade-up">
                         <a href="#join" class="btn btn-premium btn-lg">{{ __('site.hero.cta_primary') }}</a>
                         <a href="#how-it-works" class="btn btn-ghost btn-lg">
@@ -211,6 +205,14 @@
         </div>
     </section>
 
+    {{--
+        9 & 10. Statistics + Testimonials are HIDDEN for now: we don't have real
+        figures or captain reviews yet, and we'd rather keep the page credible.
+        To bring them back once we have real data, change @if (false) to @if (true)
+        (and restore the $stats array at the top of this file). Copy is untouched
+        in site.stats / site.testimonials.
+    --}}
+    @if (false)
     {{-- 9. Statistics ------------------------------------------------ --}}
     <section class="section" id="stats">
         <div class="container">
@@ -219,7 +221,7 @@
                 :title="__('site.stats.title')" />
             <div class="stats-panel mt-4" data-animate="fade-up">
                 <div class="row g-3 g-lg-4">
-                    @foreach ($stats as $s)
+                    @foreach (($stats ?? []) as $s)
                         <div class="col-6 col-lg-3">
                             <x-stat-card
                                 :value="$s['value'] ?? null"
@@ -262,6 +264,7 @@
             </div>
         </div>
     </section>
+    @endif
 
     {{-- 11. FAQ ----------------------------------------------------- --}}
     <section class="section" id="faq">
@@ -280,8 +283,9 @@
     <x-cta-section
         id="join"
         :title="__('site.cta.title')"
-        :text="__('site.cta.text')"
-        :primary="['label' => __('site.cta.primary'), 'href' => '#']"
-        :secondary="['label' => __('site.cta.secondary'), 'href' => 'mailto:'.__('site.footer.email')]" />
+        :text="__('site.cta.text')">
+        <x-store-badge store="apple" :href="config('app_links.app_store')" />
+        <x-store-badge store="google" :href="config('app_links.google_play')" />
+    </x-cta-section>
 
 @endsection

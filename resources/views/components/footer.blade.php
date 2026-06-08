@@ -57,10 +57,12 @@
                         <span class="cap-footer__contact-icon"><x-icon name="mail" :size="18" /></span>
                         <a href="mailto:{{ __('site.footer.email') }}">{{ __('site.footer.email') }}</a>
                     </li>
+                    {{-- Phone hidden for now — restore this block once a real number is set (key: site.footer.phone)
                     <li>
                         <span class="cap-footer__contact-icon"><x-icon name="phone" :size="18" /></span>
                         <a href="tel:{{ preg_replace('/[^0-9+]/', '', __('site.footer.phone')) }}"><span dir="ltr">{{ __('site.footer.phone') }}</span></a>
                     </li>
+                    --}}
                     <li class="cap-footer__location">
                         <span class="cap-footer__contact-icon"><x-icon name="map-pin" :size="18" /></span>
                         <span>{{ __('site.footer.location') }}</span>

@@ -22,6 +22,28 @@ html {
         letter-spacing: -0.01em;
     }
 
+    &__mission {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.5rem;
+        margin-bottom: 0;
+        padding: 0.6rem 1rem;
+        border-radius: 0.9rem;
+        background: rgba($brand-secondary, 0.1);
+        border-inline-start: 3px solid var(--brand-secondary);
+
+        &-label {
+            font-weight: 700;
+            color: var(--brand-secondary);
+        }
+
+        &-text {
+            color: var(--text-strong);
+            font-weight: 500;
+        }
+    }
+
     // Stacked (mobile/tablet): content-driven height with comfortable padding
     @include media-breakpoint-down(lg) {
         min-height: 0;
@@ -30,6 +52,7 @@ html {
 
         .hero__content { align-items: center; }
         .hero__actions { justify-content: center; }
+        .hero__mission { text-align: start; }
     }
 }
 

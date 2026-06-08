@@ -10,11 +10,11 @@
 return [
 
     'brand'   => 'CapStation',
-    'tagline' => 'Your smart station for more opportunities',
+    'tagline' => 'Your smart station for higher income',
 
     'meta' => [
-        'title'       => 'CapStation | The smart operations platform for captains',
-        'description' => 'CapStation brings captain opportunities and support services into one smart experience — so you move faster, choose better, and grow your income with confidence.',
+        'title'       => 'CapStation | The AI platform for captains',
+        'description' => 'CapStation is an AI-powered platform that helps captains earn more and work smarter — bringing mobility, delivery, and logistics opportunities from multiple companies into one place with intelligent recommendations.',
     ],
 
     'nav' => [
@@ -29,9 +29,11 @@ return [
     'switch_language' => 'Change language',
 
     'hero' => [
-        'eyebrow'       => 'A smart operations platform for captains',
-        'title'         => 'Your first station for more trips and better income',
-        'text'          => 'CapStation brings captain opportunities and support services into one smart experience — so you move faster, choose better, and grow your income with confidence.',
+        'eyebrow'       => 'An AI-powered platform for captains',
+        'title'         => 'Your first station for higher income and smarter work',
+        'text'          => 'CapStation is an AI-powered platform built to help captains earn more and work smarter. We bring together mobility, delivery, and logistics opportunities from multiple companies into one platform, delivering intelligent recommendations that help captains choose the most profitable trips, identify the best times and locations to work, and continuously improve their performance. At the same time, we enable businesses to access a scalable and highly engaged driver network.',
+        'mission_label' => 'Our mission',
+        'mission'       => 'Turn every working hour into a higher earning opportunity.',
         'cta_primary'   => 'Get started',
         'cta_secondary' => 'See how it works',
         'image_alt'     => 'CapStation app with a captain vehicle',
@@ -57,7 +59,7 @@ return [
     'solution' => [
         'eyebrow' => 'The solution',
         'title'   => 'Everything a captain needs, in one station',
-        'lead'    => 'CapStation brings opportunities, insight, support and services together in one platform built for the Saudi and Gulf market.',
+        'lead'    => 'We bring together mobility, delivery, and logistics opportunities from multiple companies into one platform, delivering intelligent recommendations that help captains choose the most profitable trips, identify the best times and locations to work, and continuously improve their performance.',
         'items'   => [
             ['icon' => 'inbox',   'title' => 'Opportunities in one place', 'text' => 'All the trips that suit you, without app-hopping.'],
             ['icon' => 'compass', 'title' => 'Smart recommendations',      'text' => 'Suggestions based on your location, time and work type.'],
@@ -99,7 +101,7 @@ return [
     'partners' => [
         'eyebrow' => 'For companies & partners',
         'title'   => 'A captain network ready to run your operations',
-        'lead'    => 'CapStation connects companies to a trusted captain network with clearer operational visibility.',
+        'lead'    => 'At the same time, we enable businesses to access a scalable and highly engaged driver network.',
         'items'   => [
             ['icon' => 'users',        'title' => 'Captain network access', 'text' => 'Thousands of captains ready to run your operations.'],
             ['icon' => 'bolt',         'title' => 'Faster onboarding',      'text' => 'Quick joining and activation processes.'],
@@ -176,7 +178,7 @@ return [
         'title'   => 'Everything you need to know',
         'lead'    => 'Quick answers to the most common questions.',
         'items'   => [
-            ['q' => 'What is CapStation?', 'a' => 'A smart operations platform that brings captain opportunities and support services together in one place.'],
+            ['q' => 'What is CapStation?', 'a' => 'An AI-powered platform that brings together mobility, delivery, and logistics opportunities from multiple companies, recommending the best trips, times, and areas to maximize a captain\'s income.'],
             ['q' => 'Is CapStation a delivery app?', 'a' => 'CapStation is not just a delivery app — it is a platform that supports captains across opportunities, income, performance and services.'],
             ['q' => 'How do I start as a captain?', 'a' => 'Register your account, complete your profile and preferences, and start receiving suitable opportunities.'],
             ['q' => 'Are there any fees?', 'a' => 'We make any fee details clear and transparent at sign-up, with no surprises.'],
@@ -186,21 +188,30 @@ return [
     ],
 
     'cta' => [
-        'title'     => 'Ready to start your journey with CapStation?',
-        'text'      => 'Join today and start receiving better-matched opportunities for better income and support along the way.',
-        'primary'   => 'Join now',
-        'secondary' => 'Contact us',
+        'title'       => 'Ready to start your journey with CapStation?',
+        'text'        => 'Download the app now and start receiving better-matched opportunities for better income and support along the way.',
+        'primary'     => 'Join now',
+        'secondary'   => 'Contact us',
+        'app_store'   => 'Download on the App Store',
+        'google_play' => 'Get it on Google Play',
+    ],
+
+    'store' => [
+        'apple_top'   => 'Download on the',
+        'apple_name'  => 'App Store',
+        'google_top'  => 'GET IT ON',
+        'google_name' => 'Google Play',
     ],
 
     'footer' => [
-        'description' => 'A smart operations platform that brings opportunities and support services together in one place, so captains move faster, choose better, and grow their income with confidence.',
+        'description' => 'An AI-powered platform that brings mobility, delivery, and logistics opportunities together in one place and recommends the best for captains — for higher income and smarter work.',
         'explore'     => 'Explore',
         'support'     => 'Help & support',
         'contact'     => 'Contact us',
         'follow'      => 'Follow us',
 
         // NOTE: placeholder contact details — replace with real business data.
-        'email'       => 'hello@capstation.sa',
+        'email'       => 'hello@capstation.app',
         'phone'       => '+966 5X XXX XXXX',
         'location'    => 'Riyadh, Saudi Arabia',
 

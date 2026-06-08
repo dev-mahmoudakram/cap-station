@@ -18,11 +18,14 @@
 
                 <div class="cta-section__actions">
                     @if ($primary)
-                        <a href="{{ $primary['href'] }}" class="btn btn-gold btn-lg">{{ $primary['label'] }}</a>
+                        <a href="{{ $primary['href'] }}" class="btn btn-gold btn-lg"
+                           @if (!empty($primary['target'])) target="{{ $primary['target'] }}" rel="noopener" @endif>{{ $primary['label'] }}</a>
                     @endif
                     @if ($secondary)
-                        <a href="{{ $secondary['href'] }}" class="btn btn-outline-light btn-lg">{{ $secondary['label'] }}</a>
+                        <a href="{{ $secondary['href'] }}" class="btn btn-outline-light btn-lg"
+                           @if (!empty($secondary['target'])) target="{{ $secondary['target'] }}" rel="noopener" @endif>{{ $secondary['label'] }}</a>
                     @endif
+                    {{ $slot }}
                 </div>
             </div>
         </div>
